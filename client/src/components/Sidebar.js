@@ -1,11 +1,14 @@
 import React from "react";
-import { Menu, X, Home, Heart, Users } from "lucide-react";
-
-const menuItems = [
-  { icon: <Home size={24} />, label: "Home" },
-  { icon: <Heart size={24} />, label: "Donate" },
-  { icon: <Users size={24} />, label: "Team" },
-];
+import {
+  Menu,
+  X,
+  Home,
+  Heart,
+  LayoutDashboardIcon,
+  HelpingHand,
+  PenIcon,
+} from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 export default function Sidebar({ isOpen, setIsOpen }) {
   return (
@@ -21,16 +24,66 @@ export default function Sidebar({ isOpen, setIsOpen }) {
         </button>
       </div>
 
-      <nav className="mt-4">
-        {menuItems.map((item, i) => (
-          <div
-            key={i}
-            className="flex items-center gap-4 px-4 py-3 hover:bg-blue-700 cursor-pointer"
-          >
-            {item.icon}
-            {isOpen && <span className="text-sm">{item.label}</span>}
-          </div>
-        ))}
+      <nav className="mt-4 flex flex-col gap-2">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `flex items-center gap-4 px-4 py-3 transition-colors ${
+              isActive ? "bg-blue-700" : "hover:bg-blue-600"
+            }`
+          }
+        >
+          <Home size={24} />
+          {isOpen && <span className="text-sm">Home</span>}
+        </NavLink>
+
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            `flex items-center gap-4 px-4 py-3 transition-colors ${
+              isActive ? "bg-blue-700" : "hover:bg-blue-600"
+            }`
+          }
+        >
+          <LayoutDashboardIcon size={24} />
+          {isOpen && <span className="text-sm">Dashboard</span>}
+        </NavLink>
+        <NavLink
+          to="/donate"
+          className={({ isActive }) =>
+            `flex items-center gap-4 px-4 py-3 transition-colors ${
+              isActive ? "bg-blue-700" : "hover:bg-blue-600"
+            }`
+          }
+        >
+          <HelpingHand size={24} />
+          {isOpen && <span className="text-sm">Donate</span>}
+        </NavLink>
+
+        <NavLink
+          to="/impact-stories"
+          className={({ isActive }) =>
+            `flex items-center gap-4 px-4 py-3 transition-colors ${
+              isActive ? "bg-blue-700" : "hover:bg-blue-600"
+            }`
+          }
+        >
+          <Heart size={24} />
+          {isOpen && <span className="text-sm">Impact</span>}
+        </NavLink>
+
+        <NavLink
+          to="/feedback"
+          className={({ isActive }) =>
+            `flex items-center gap-4 px-4 py-3 transition-colors ${
+              isActive ? "bg-blue-700" : "hover:bg-blue-600"
+            }`
+          }
+        >
+          <PenIcon size={24} />
+          {isOpen && <span className="text-sm">Write to us</span>}
+        </NavLink>
+        {/* Add more NavLinks below as needed */}
       </nav>
     </div>
   );

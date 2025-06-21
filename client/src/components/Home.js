@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Droplet, Globe, School, HeartHandshake } from "lucide-react";
-
+import { NavLink } from "react-router-dom";
 export default function HomePage() {
   return (
     <div className="font-sans bg-blue-50 text-gray-800">
@@ -21,7 +21,12 @@ export default function HomePage() {
           whileHover={{ scale: 1.1 }}
           className="mt-10 bg-white text-blue-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-blue-100"
         >
-          Contribute to the Cause
+          <NavLink to="/donate">
+            <span className="flex items-center gap-2">
+              <Droplet size={20} />
+              Get Involved
+            </span>
+          </NavLink>
         </motion.button>
       </section>
 
@@ -131,12 +136,12 @@ export default function HomePage() {
         </h2>
         <div className="mt-8 flex flex-wrap justify-center gap-10">
           <img
-            src="/images/waterhealth-logo.png"
+            src="/assets/waterhealth_logo.jpg"
             alt="WaterHealth"
             className="h-20"
           />
           <img
-            src="/images/maithri-logo.png"
+            src="/assets/maithri_logo.jpg"
             alt="Maithri Aquatech"
             className="h-20"
           />
@@ -153,9 +158,17 @@ export default function HomePage() {
           thousands more. Corporate donors and individuals can make a huge
           difference.
         </p>
-        <button className="mt-8 bg-white text-blue-700 py-4 px-8 rounded-full font-semibold text-lg shadow-lg hover:bg-blue-100">
-          Make a Donation
-        </button>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          className="mt-8 bg-white text-blue-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-blue-100"
+        >
+          <NavLink to="/donate">
+            <span className="flex items-center gap-2">
+              <Droplet size={20} />
+              Make a Donation
+            </span>
+          </NavLink>
+        </motion.button>
       </section>
 
       <footer className="py-12 bg-blue-900 text-white text-center">
