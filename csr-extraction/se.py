@@ -9,8 +9,8 @@ import time
 import os
 
 # ----- CONFIG -----
-CHROME_DRIVER_PATH = "D:/JPMC-Mock/csr-extraction/chromedriver-win32/chromedriver.exe"  # or use full path like "C:/path/to/chromedriver.exe"
-OUTPUT_FILE = "D:/JPMC-Mock/csr-extraction/companiesl_list.xlsx"
+CHROME_DRIVER_PATH = "csr-extraction/chromedriver-win32/chromedriver.exe"  # or use full path like "C:/path/to/chromedriver.exe"
+OUTPUT_FILE = "csr-extraction/companiesl_list.xlsx"
 TARGET_URL = "https://www.csr.gov.in/content/csr/global/master/home/home/csr-spent--development-sector-wise/sector-division/companies.html?=Sanitation=FY%202023-24=Health,%20Eradicating%20Hunger,%20Poverty%20and%20Malnutrition,%20Safe%20Drinking%20water,%20Sanitation"
 
 # ----- SETUP CHROME -----
